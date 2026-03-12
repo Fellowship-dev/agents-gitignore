@@ -226,6 +226,17 @@ sweep.yaml
 .mentat-config.json
 
 
+# -----------------------------------------------------------------------------
+# Spec-Kit (Fellowship-dev)
+# https://github.com/Fellowship-dev/spec-kit
+# Specification-driven development. .specify/ contains tooling (scripts,
+# templates, memory). specs/ contains generated feature specifications.
+# If your team shares specs as documentation, add: !specs/
+# -----------------------------------------------------------------------------
+.specify/
+specs/
+
+
 # =============================================================================
 # END — Last updated: 2026-03-12
 # Missing a tool? Open a PR: https://github.com/Fellowship-dev/agents-gitignore

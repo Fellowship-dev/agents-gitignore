@@ -50,6 +50,17 @@ CLAUDE.md
 !.cursor/rules/my-team-rules.mdc
 ```
 
+Or if your team uses [Spec-Kit](https://github.com/Fellowship-dev/spec-kit) and wants to share feature specs as documentation:
+
+```gitignore
+# Ignore speckit tooling and generated specs
+.specify/
+specs/
+
+# But keep specs/ as shared team documentation
+!specs/
+```
+
 **How negation works:**
 - `!filename` un-ignores a specific file
 - To un-ignore a file inside an ignored directory, you must first un-ignore the directory itself
@@ -85,6 +96,7 @@ CLAUDE.md
 | [Plandex](https://github.com/plandex-ai/plandex) | Plandex | `.plandex/` |
 | [GPT Engineer](https://github.com/AntonOsika/gpt-engineer) | AntonOsika | `.gpteng/` |
 | [Mentat](https://github.com/AbanteAI/mentat) | AbanteAI | `.mentat-config.json` |
+| [Spec-Kit](https://github.com/Fellowship-dev/spec-kit) | Fellowship-dev | `.specify/`, `specs/` |
 
 **Not included** (no local project files): Supermaven, Pieces, Blackbox AI, Lovable, v0, GitHub Copilot Chat.
 
@@ -95,6 +107,8 @@ CLAUDE.md
 - **Replit** — `.replit` and `replit.nix` are platform config, not just AI. They're commented out by default. Uncomment if you exported a project from Replit and want to clean it up.
 
 - **Zed** — `.zed/` contains general editor settings alongside AI config. If your team uses Zed for non-AI settings, you may want to be more selective.
+
+- **Spec-Kit** — `.specify/` is tooling (scripts, templates, constitution) and should always be ignored. `specs/` contains generated feature specifications — some teams treat these as throwaway build artifacts, others commit them as living documentation. If your team shares specs, add `!specs/` to your exceptions.
 
 - **AGENTS.md** — this is becoming a cross-tool standard ([Linux Foundation stewardship](https://github.com/anthropics/agents-md-spec)). Codex CLI, Devin, Augment, and Junie all read it. If your project uses `AGENTS.md` as shared documentation, add `!AGENTS.md` to your exceptions.
 
