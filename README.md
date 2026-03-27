@@ -4,7 +4,7 @@ A comprehensive `.gitignore` for AI coding agents and assistants.
 
 Every developer on your team uses different AI tools. Claude Code, Cursor, Copilot, Aider, Windsurf — each one drops config files, rules, and caches into your repo. Without a shared `.gitignore`, these files end up in pull requests where they don't belong.
 
-This project maintains a single, well-documented gitignore file that covers **25+ AI coding tools** so you can add it once and forget about it.
+This project maintains a single, well-documented gitignore file that covers **45+ AI coding tools** so you can add it once and forget about it.
 
 ## Quick start
 
@@ -96,7 +96,30 @@ specs/
 | [Plandex](https://github.com/plandex-ai/plandex) | Plandex | `.plandex/` |
 | [GPT Engineer](https://github.com/AntonOsika/gpt-engineer) | AntonOsika | `.gpteng/` |
 | [Mentat](https://github.com/AbanteAI/mentat) | AbanteAI | `.mentat-config.json` |
+| [OpenHands](https://docs.all-hands.dev) | All Hands AI | `.openhands/` |
+| [Goose](https://github.com/block/goose) | Block | `.goose/` |
+| [Kilo Code](https://kilocode.ai) | Kilo Code | `.kilocode/` |
+| [Kiro CLI](https://kiro.dev) | AWS | `.kiro/` |
+| [CodeBuddy](https://codebuddy.ai) | CodeBuddy | `.codebuddy/` |
+| [Command Code](https://commandcode.dev) | Command Code | `.commandcode/` |
+| [Cortex Code](https://docs.snowflake.com/en/developer-guide/cortex) | Snowflake | `.cortex/` |
+| [Crush](https://crush.dev) | Crush | `.crush/` |
+| [Droid](https://factory.ai) | Factory | `.factory/` |
+| [iFlow CLI](https://iflow.dev) | iFlow | `.iflow/` |
+| [Kode](https://kode.ai) | Kode | `.kode/` |
+| [MCPJam](https://mcpjam.dev) | MCPJam | `.mcpjam/` |
+| [Mistral Vibe](https://mistral.ai) | Mistral | `.vibe/` |
+| [Mux](https://mux.dev) | Mux | `.mux/` |
+| [Pi](https://pi.ai) | Pi | `.pi/` |
+| [Qoder](https://qoder.ai) | Qoder | `.qoder/` |
+| [Qwen Code](https://qwen.ai) | Alibaba | `.qwen/` |
+| [Zencoder](https://zencoder.ai) | Zencoder | `.zencoder/` |
+| [Neovate](https://neovate.dev) | Neovate | `.neovate/` |
+| [Pochi](https://pochi.dev) | Pochi | `.pochi/` |
+| [AdaL](https://adal.dev) | AdaL | `.adal/` |
 | [Spec-Kit](https://github.com/Fellowship-dev/spec-kit) | Fellowship-dev | `.specify/`, `specs/` |
+| [Flowchad](https://github.com/Fellowship-dev/flowchad) | Fellowship-dev | `.flowchad/` |
+| [Vercel Skills CLI](https://github.com/vercel-labs/skills) | Vercel | `.agents/`, `skills-lock.json` |
 
 **Not included** (no local project files): Supermaven, Pieces, Blackbox AI, Lovable, v0, GitHub Copilot Chat.
 
@@ -111,6 +134,8 @@ specs/
 - **Spec-Kit** — `.specify/` is tooling (scripts, templates, constitution) and should always be ignored. `specs/` contains generated feature specifications — some teams treat these as throwaway build artifacts, others commit them as living documentation. If your team shares specs, add `!specs/` to your exceptions.
 
 - **AGENTS.md** — this is becoming a cross-tool standard ([Linux Foundation stewardship](https://github.com/anthropics/agents-md-spec)). Codex CLI, Devin, Augment, and Junie all read it. If your project uses `AGENTS.md` as shared documentation, add `!AGENTS.md` to your exceptions.
+
+- **Vercel Skills CLI** — `.agents/` is the canonical centralized location for skills installed via `npx skills add`. The CLI symlinks from each agent's skill directory (`.claude/skills/`, `.cursor/skills/`, etc.) into `.agents/skills/`. It also creates `skills-lock.json` to track installed versions. Many of the agent-specific directories listed above (`.codebuddy/`, `.kilocode/`, `.kode/`, etc.) are only created by the Skills CLI when installing to those agents — if you don't use those agents, you won't see those directories.
 
 ## FAQ
 
